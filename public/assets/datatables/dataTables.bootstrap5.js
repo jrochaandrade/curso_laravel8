@@ -1,5 +1,5 @@
-/*! DataTables Bootstrap 4 integration
- * ©2011-2017 SpryMedia Ltd - datatables.net/license
+/*! DataTables Bootstrap 5 integration
+ * 2020 SpryMedia Ltd - datatables.net/license
  */
 
 (function( factory ){
@@ -50,7 +50,7 @@ var DataTable = $.fn.dataTable;
 
 
 /**
- * DataTables integration for Bootstrap 4. This requires Bootstrap 4 and
+ * DataTables integration for Bootstrap 5. This requires Bootstrap 5 and
  * DataTables 1.10 or newer.
  *
  * This file sets the defaults and adds options to DataTables to style its
@@ -62,7 +62,7 @@ var DataTable = $.fn.dataTable;
 $.extend( true, DataTable.defaults, {
 	dom:
 		"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
-		"<'row'<'col-sm-12'tr>>" +
+		"<'row dt-row'<'col-sm-12'tr>>" +
 		"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
 	renderer: 'bootstrap'
 } );
@@ -70,9 +70,9 @@ $.extend( true, DataTable.defaults, {
 
 /* Default class modification */
 $.extend( DataTable.ext.classes, {
-	sWrapper:      "dataTables_wrapper dt-bootstrap4",
+	sWrapper:      "dataTables_wrapper dt-bootstrap5",
 	sFilterInput:  "form-control form-control-sm",
-	sLengthSelect: "custom-select custom-select-sm form-control form-control-sm",
+	sLengthSelect: "form-select form-select-sm",
 	sProcessing:   "dataTables_processing card",
 	sPageButton:   "paginate_button page-item"
 } );
@@ -174,6 +174,7 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 		}
 	};
 
+	var hostEl = $(host);
 	// IE9 throws an 'unknown error' if document.activeElement is used
 	// inside an iframe or frame. 
 	var activeEl;
@@ -183,17 +184,26 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 		// elements, focus is lost on the select button which is bad for
 		// accessibility. So we want to restore focus once the draw has
 		// completed
-		activeEl = $(host).find(document.activeElement).data('dt-idx');
+		activeEl = hostEl.find(document.activeElement).data('dt-idx');
 	}
 	catch (e) {}
 
+	var paginationEl = hostEl.children('ul.pagination');
+
+	if (paginationEl.length) {
+		paginationEl.empty();
+	}
+	else {
+		paginationEl = hostEl.html('<ul/>').children('ul').addClass('pagination');
+	}
+
 	attach(
-		$(host).empty().html('<ul class="pagination"/>').children('ul'),
+		paginationEl,
 		buttons
 	);
 
 	if ( activeEl !== undefined ) {
-		$(host).find( '[data-dt-idx='+activeEl+']' ).trigger('focus');
+		hostEl.find('[data-dt-idx='+activeEl+']').trigger('focus');
 	}
 };
 
