@@ -7,13 +7,14 @@
         <title>@yield('title')</title>
         <!-- <script src="https://cdn.tailwindcss.com"></script> --> <!-- Esta dando erro essa linha -->       
              
-       <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-       <!-- codigo do curso não funcionou
-         <link href="{{ URL::asset('assets/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> -->
+       
         
-        <link rel="stylesheet" type="" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" type="" href="//cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+        <!-- <link rel="stylesheet" type="" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" type="" href="//cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"> -->
+
+        <link rel="stylesheet" type="" href="assets/datatables/dataTables.bootstrap5.min.css">
 
         
         
@@ -50,9 +51,15 @@
                        
     @yield('content')      
       
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="//cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+        <!-- <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script> -->
+
+        
+        <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+        <script src="{{ URL::asset('assets/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/datatables/dataTables.bootstrap5.min.js')}}"></script>
+        <script src="{{ URL::asset('assets/datatables/datatables-demo.js') }}"></script>
 
         <script>
             $(document).ready(function () {
