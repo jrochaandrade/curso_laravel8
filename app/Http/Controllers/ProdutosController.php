@@ -12,7 +12,7 @@ use App\Models\produto;
 class ProdutosController extends Controller
 {
     public function index(){
-        $produtos = produto::paginate();       
+        $produtos = produto::orderby('id', 'asc')->paginate(500000);       
         return view('produtos.index', ['produtos'=> $produtos]);
     }
 
@@ -20,21 +20,58 @@ class ProdutosController extends Controller
         return view('produtos.create');
     }
 
+
+    public function insert(Request $request){
+        $produto = new Produto();
+        $produto->nome = $request->nome;
+        $produto->valor = $request->valor;
+        $produto->estoque = $request->estoque;
+        $produto->descricao = $request->descricao;
+        $produto->descricao2 = $request->descricao2;
+        $produto->save();
+        return redirect()->route('produtos.inserir');
+    }
+
     /**
      * Summary of show
      * @param mixed $nome
      * @param mixed $valor
+     * @param mixed $estoque
      * @return string
      */
-    public function show($nome, $valor){
 
-        return view('produtos.show', ['nome'=> $nome, 'valor' => $valor]);
+     public function show($id){
+        $produto = Produto::find($id);
+        return view('produtos.show', ['produto'=> $produto]);       
+                
+    }
+
+    public function edit(produto $produto){
+        return view('produtos.edit', ['produto'=> $produto]);     
+                
+    }
+
+    public function editar(Request $request){
+        $produto = new Produto();
+        $produto->nome = $request->nome;
+        $produto->valor = $request->valor;
+        $produto->estoque = $request->estoque;
+        $produto->descricao = $request->descricao;
+        $produto->descricao2 = $request->descricao2;
+        $produto->save();
+        return redirect()->route('produtos');
+
+    }
+
+    /* public function show($nome, $valor = null, $estoque){
+
+        return view('produtos.show', ['nome'=> $nome, 'valor' => $valor, 'estoque'=>$estoque]);
         
-        /* if($valor){
+        if($valor){
             return "O nome do produto é $nome, e o seu valor é $valor";        
         }else{
             return "O nome do produto é $nome.";        
-        }*/
+        }
         
-    } 
+    } */ 
 }
