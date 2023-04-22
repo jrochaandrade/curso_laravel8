@@ -10,7 +10,7 @@
     <hr class="my-4">
     <p><?php echo $produto->descricao2?></p>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" href="\produtos" role="button">Ver produtos</a>
+        <a class="btn btn-primary btn-lg" href="\produtos" role="button">Voltar para produtos</a>
     </p>
 </div>
 @endsection

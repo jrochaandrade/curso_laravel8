@@ -29,7 +29,7 @@
                 <td>
                   <a title="Detalhes do produto" href="{{route('produtos.descricao', $produto->id)}}"><i class="fa-solid fa-eye text-primary mr-1"></i></a>
                   <a title="Editar" href="{{route('produtos.edit', $produto)}}"><i class="fa-solid fa-pen-to-square text-info mr-1"></i></a>
-                  <a title="Excluir" href="{{route('produtos.descricao', $produto->id)}}"><i class="fa-solid fa-trash text-danger mr-1"></i></a>
+                  <a title="Excluir" href="{{route('produtos.modal', $produto)}}" ><i class="fa-solid fa-trash text-danger mr-1"></i></a>
                 </td>
         </tr>
       @endforeach
@@ -41,13 +41,35 @@
         <!-- {{$produtos->links()}} -->
 </div>
 
-<!-- <script type="text/javascript">
-  $(document).ready(function (){
-    $('#dataTable').dataTable({
-      "ordering":false
-    })
-  });  
-</script> -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Deletar registro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja realmente excluir esse registro?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <form method="POST" action="{{route('produtos.delete', $id)}}">
+          @csrf
+          @method('delete')
+          <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php 
+  if(@$id != ""){
+    echo "<script>$('#exampleModal').modal('show');</script>";
+  }
+?>
 
 @endsection
 
