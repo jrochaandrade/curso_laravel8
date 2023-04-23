@@ -43,7 +43,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="excluirModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -52,10 +52,11 @@
       </div>
       <div class="modal-body">
         Deseja realmente excluir esse registro?
+        <?php echo @$id?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <form method="POST" action="{{route('produtos.delete', $id)}}">
+        <form method="POST" action="{{route('produtos.delete', $produto)}}">
           @csrf
           @method('delete')
           <button type="submit" class="btn btn-danger">Excluir</button>
@@ -67,10 +68,13 @@
 
 <?php 
   if(@$id != ""){
-    echo "<script>$('#exampleModal').modal('show');</script>";
-  }
+    echo "<script>$('excluirModal').modal(options);</script>";
+}
 ?>
 
+
 @endsection
+
+
 
 

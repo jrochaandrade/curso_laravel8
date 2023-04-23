@@ -13,8 +13,8 @@
 
        
         
-        <!-- <link rel="stylesheet" type="" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"> -->
-        <!-- <link rel="stylesheet" type="" href="//cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"> -->
+        <link rel="stylesheet" type="" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="" href="//cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
         <link rel="stylesheet" type="" href="assets/datatables/dataTables.bootstrap5.min.css">
 
@@ -53,9 +53,9 @@
                        
     @yield('content')      
       
-        <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
-        <!-- <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="//cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
         
         <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
