@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutosController;
-
+use App\Http\Controllers\UsuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +40,5 @@ Route::get('produtos/{produto}/delete', [ProdutosController::class, 'modal'])->n
 
 Route::delete('produtos/{produto}', [ProdutosController::class, 'delete'])->name('produtos.delete');
 
+Route::post('usuarios', [UsuariosController::class, 'login'])->name('usuarios.login');
 
