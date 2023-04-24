@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\ViewServiceProvider;
-use App\Models\produto;
+use App\Models\Produto;
 
 /**
  * Summary of ProdutosController
@@ -12,7 +12,7 @@ use App\Models\produto;
 class ProdutosController extends Controller
 {
     public function index(){
-        $produtos = produto::orderby('id', 'asc')->paginate(500000);       
+        $produtos = Produto::orderby('id', 'asc')->paginate(500000);       
         return view('produtos.index', ['produtos'=> $produtos]);
     }
 
@@ -63,16 +63,23 @@ class ProdutosController extends Controller
 
     }
 
-    public function delete(produto $produto){
+    /* public function delete(produto $produto){
         $produto->delete();
-        //return redirect()->back();
+        return redirect()->back();
+        
          
                 
+    } */
+
+    public function delete(Request $request, $id){
+        /* Produto::destroy($id);
+        return redirect()->route('produtos')->with('success', 'Produto excluído com sucesso!'); */
     }
+
 
     public function modal($id){        
         $produtos = produto::orderby('id', 'asc')->paginate(500000);
-        return view('produtos.index', ['produtos'=> $produtos, 'id' => $id]);
+        return view('produtos.index', ['produtos'=> $produtos, 'id' => $id]);       
         
         
     }
