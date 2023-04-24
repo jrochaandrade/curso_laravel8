@@ -29,23 +29,17 @@
                 <td>
                   <a title="Detalhes do produto" href="{{route('produtos.descricao', $produto->id)}}"><i class="fa-solid fa-eye text-primary mr-1"></i></a>
                   <a title="Editar" href="{{route('produtos.edit', $produto)}}"><i class="fa-solid fa-pen-to-square text-info mr-1"></i></a>
-                  <a title="Excluir" data-bs-toggle="modal" data-bs-target="#excluirModal" href="" ><i class="fa-solid fa-trash text-danger mr-1"></i></a>
+                  <a title="Excluir" data-bs-toggle="modal" data-bs-target="#excluirModal{{$produto->id}}" href="" ><i class="fa-solid fa-trash text-danger mr-1"></i></a>
                 </td>
         </tr>
-      @endforeach
-      
-      </tbody>
-  </table>
-</div>
+        </div>
 </div>
 </div> 
         <!-- {{$produtos->links()}} -->
 </div>
 
-
-<!-- Modal -->
-<form id=excluirModal
-<div class="modal fade" id="excluirModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Modal -->
+<div class="modal fade" id="excluirModal{{$produto->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -58,17 +52,24 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <!-- <form method="POST" action="{{route('produtos.delete', $produto)}}"> -->
-          
-          
+        <form method="POST" action="{{route('produtos.delete', $produto)}}">        
+          @csrf
+          @method('DELETE')
           <button type="submit" class="btn btn-danger">Excluir</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+      
+      
+     
 
 
+
+
+
+@endforeach
 
 <?php 
   /* if(@$id != ""){

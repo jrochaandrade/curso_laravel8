@@ -71,18 +71,19 @@ class ProdutosController extends Controller
                 
     } */
 
-    public function delete(Request $request, $id){
-        /* Produto::destroy($id);
-        return redirect()->route('produtos')->with('success', 'Produto excluído com sucesso!'); */
+    public function delete(produto $produto){
+        $produto->delete();
+        return redirect()->route('produtos');
     }
+    
 
 
-    public function modal($id){        
+    /* public function modal($id){        
         $produtos = produto::orderby('id', 'asc')->paginate(500000);
         return view('produtos.index', ['produtos'=> $produtos, 'id' => $id]);       
         
         
-    }
+    } */
 
 
     /* public function show($nome, $valor = null, $estoque){
