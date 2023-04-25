@@ -1,8 +1,12 @@
 @extends('layouts.template')
 @section('title', 'Produtos')
 @section('content')
-<div class="container">
-
+<?php
+  @session_start();
+  if(@$_SESSION['id_usuario'] == null){
+    echo "<script language='javascript'> window.location='./' </script>";
+  }?>
+<div class="container">  
 <a href="{{route('produtos.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir produto</a>        
                 
 <!-- DataTales Example -->

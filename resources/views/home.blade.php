@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <title>Faça seu login</title>
         <meta charset="UTF-8">

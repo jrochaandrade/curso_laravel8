@@ -20,7 +20,7 @@ class UsuarioFactory extends Factory
             /* 'email_verified_at' => now(), */
             'senha' => '123456789', // password
             /* 'remember_token' => Str::random(10), */
-            'nivel' => $this->faker->name('usuario'),
+            'nivel' => 'usuario',
         ];
     }
 }

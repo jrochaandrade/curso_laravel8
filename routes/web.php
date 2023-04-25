@@ -20,7 +20,7 @@ use App\Http\Controllers\UsuariosController;
     return view('welcome');
 }); */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('produtos/inserir', [ProdutosController::class, 'create'])->name('produtos.inserir');
 
@@ -40,5 +40,7 @@ Route::get('produtos/{produto}/delete', [ProdutosController::class, 'modal'])->n
 
 Route::delete('produtos/{produto}', [ProdutosController::class, 'delete'])->name('produtos.delete');
 
-Route::post('usuarios', [UsuariosController::class, 'login'])->name('usuarios.login');
+Route::post('produto', [UsuariosController::class, 'login'])->name('usuarios.login');
+
+Route::get('/', [UsuariosController::class, 'logout'])->name('usuarios.logout');
 
