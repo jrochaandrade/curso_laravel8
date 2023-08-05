@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="poligonodesmatejp" id="poligonodesmatejp">
+	<SimpleField name="id" type="float"></SimpleField>
+	<SimpleField name="ID_CADAST" type="string"></SimpleField>
+	<SimpleField name="NOME" type="string"></SimpleField>
+	<SimpleField name="CPF_CNPJ" type="string"></SimpleField>
+	<SimpleField name="ENDERECO" type="string"></SimpleField>
+	<SimpleField name="MUNICIPIO" type="string"></SimpleField>
+	<SimpleField name="AREA" type="float"></SimpleField>
+	<SimpleField name="NUM_AUT" type="string"></SimpleField>
+	<SimpleField name="ENQUAD_AUT" type="string"></SimpleField>
+	<SimpleField name="NUM_EMBARG" type="string"></SimpleField>
+	<SimpleField name="EQUIPE" type="string"></SimpleField>
+	<SimpleField name="NUM_BO_BOA" type="string"></SimpleField>
+	<SimpleField name="ENQUA_BOA" type="string"></SimpleField>
+	<SimpleField name="COOR_CENTR" type="string"></SimpleField>
+	<SimpleField name="DATA" type="string"></SimpleField>
+	<SimpleField name="HORA" type="string"></SimpleField>
+	<SimpleField name="IMAGEM_01" type="string"></SimpleField>
+	<SimpleField name="DATA-IMA01" type="string"></SimpleField>
+	<SimpleField name="ORBITA-01" type="string"></SimpleField>
+	<SimpleField name="IMAGEM_02" type="string"></SimpleField>
+	<SimpleField name="DATA-IMA02" type="string"></SimpleField>
+	<SimpleField name="ORBITA-02" type="string"></SimpleField>
+	<SimpleField name="IMAGEM_03" type="string"></SimpleField>
+	<SimpleField name="DATA-IMA03" type="string"></SimpleField>
+	<SimpleField name="ORBITA-03" type="string"></SimpleField>
+	<SimpleField name="IMAGEM_04" type="string"></SimpleField>
+	<SimpleField name="DATA-IMA04" type="string"></SimpleField>
+	<SimpleField name="ORBITA-04" type="string"></SimpleField>
+	<SimpleField name="IMAGEM_05" type="string"></SimpleField>
+	<SimpleField name="DATA-IMA05" type="string"></SimpleField>
+	<SimpleField name="ORBITA-05" type="string"></SimpleField>
+	<SimpleField name="INFRACAO" type="string"></SimpleField>
+	<SimpleField name="INICIO-DES" type="string"></SimpleField>
+	<SimpleField name="TIPO-DESM" type="string"></SimpleField>
+	<SimpleField name="AREA-APP" type="string"></SimpleField>
+	<SimpleField name="AREA-QUEIM" type="string"></SimpleField>
+	<SimpleField name="OBS-IMG01" type="string"></SimpleField>
+	<SimpleField name="OBS-IMG02" type="string"></SimpleField>
+	<SimpleField name="OBS-IMG03" type="string"></SimpleField>
+	<SimpleField name="OBS-IMG04" type="string"></SimpleField>
+	<SimpleField name="OBS-IMG05" type="string"></SimpleField>
+	<SimpleField name="ID-ALERTA" type="string"></SimpleField>
+	<SimpleField name="OBS" type="string"></SimpleField>
+	<SimpleField name="FOTO-01" type="string"></SimpleField>
+	<SimpleField name="ROTUL-FT01" type="string"></SimpleField>
+	<SimpleField name="FOTO-02" type="string"></SimpleField>
+	<SimpleField name="ROTUL-FT02" type="string"></SimpleField>
+	<SimpleField name="FOTO-03" type="string"></SimpleField>
+	<SimpleField name="ROTUL-FT03" type="string"></SimpleField>
+	<SimpleField name="FOTO-04" type="string"></SimpleField>
+	<SimpleField name="ROTUL-FT04" type="string"></SimpleField>
+	<SimpleField name="ANEXO" type="string"></SimpleField>
+</Schema>
+<Folder><name>poligonodesmatejp</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#poligonodesmatejp">
+		<SimpleData name="id">10</SimpleData>
+		<SimpleData name="ID_CADAST">JIPA-2023-JPRA</SimpleData>
+		<SimpleData name="AREA">377.896</SimpleData>
+		<SimpleData name="ENQUAD_AUT">Art. XX do Decreto Federal 6.514/2008</SimpleData>
+		<SimpleData name="ENQUA_BOA">Art. XX da Lei Federal 9.605/1998</SimpleData>
+		<SimpleData name="COOR_CENTR">10°52′49,79″S,61°57′24,23″W</SimpleData>
+		<SimpleData name="DATA">04/08/23</SimpleData>
+		<SimpleData name="HORA">20:38</SimpleData>
+		<SimpleData name="IMAGEM_01">Satélite</SimpleData>
+		<SimpleData name="IMAGEM_02">Satélite</SimpleData>
+		<SimpleData name="IMAGEM_03">Satélite</SimpleData>
+		<SimpleData name="IMAGEM_04">Satélite</SimpleData>
+		<SimpleData name="IMAGEM_05">Satélite Spot</SimpleData>
+		<SimpleData name="DATA-IMA05">08/2008</SimpleData>
+		<SimpleData name="TIPO-DESM">hectares de vegetação nativa em área de reserva legal</SimpleData>
+		<SimpleData name="OBS-IMG01">na área delimitada não apresenta densidade de vegetação, dano ambiental.</SimpleData>
+		<SimpleData name="OBS-IMG02">na área delimitada apresenta alta densidade de vegetação com caracteristicas de vegetação nativa preservada.</SimpleData>
+		<SimpleData name="OBS-IMG03">na área delimitada apresenta alta densidade de vegetação com caracteristicas de vegetação nativa preservada.</SimpleData>
+		<SimpleData name="OBS-IMG04">na área delimitada apresenta alta densidade de vegetação com caracteristicas de vegetação nativa preservada.</SimpleData>
+		<SimpleData name="OBS-IMG05">na área delimitada apresenta alta densidade de vegetação com caracteristicas de vegetação nativa preservada.</SimpleData>
+		<SimpleData name="ROTUL-FT01">Imagem realizada com drone do dano ambiental.</SimpleData>
+		<SimpleData name="ROTUL-FT02">Imagem realizada com drone do dano ambiental.</SimpleData>
+		<SimpleData name="ROTUL-FT03">Imagem realizada com drone do dano ambiental.</SimpleData>
+		<SimpleData name="ROTUL-FT04">Imagem realizada com drone do dano ambiental.</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>-61.9610523676046,-10.8721227489757 -61.9701178795432,-10.8868130704624 -61.9519685418648,-10.8908349937729 -61.9469344711744,-10.8775780796684 -61.9460828122027,-10.8703103980282 -61.9610523676046,-10.8721227489757</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>
